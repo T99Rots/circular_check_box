@@ -306,7 +306,7 @@ class _RenderCircularCheckBox extends RenderToggleable {
       final Paint paintX = Paint()
         ..color = Color.lerp(inactiveColor, Colors.red, position.value)
         ..style = PaintingStyle.stroke
-        ..strokeWidth = 1.0;
+        ..strokeWidth = 4.0;
       if (t <= 0.5) {
         canvas.drawCircle(center, 11, paintX);
       } else {
@@ -321,7 +321,9 @@ class _RenderCircularCheckBox extends RenderToggleable {
       }
     } else {
       // Two cases: null to true, true to null
-      final Paint paint = Paint()..color = _colorAt(1.0);
+      final Paint paint = Paint()
+        ..color = _colorAt(1.0)
+        ..strokeWidth = 4.0;
       canvas.drawCircle(center, 13, paint);
 
       _initStrokePaint(paint);
